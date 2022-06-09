@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JSON-RPC API | MetaMask Docs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/metamask-fox.svg">
+    <link rel="manifest" href="/manifest.json">
+    <script data-domain="docs.metamask.io" src="https://plausible.io/js/plausible.js"></script>
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="Developer documentation for the MetaMask Ethereum wallet">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.01d83501.css" as="style"><link rel="preload" href="/assets/js/app.27ec8cea.js" as="script"><link rel="preload" href="/assets/js/4.335f270e.js" as="script"><link rel="preload" href="/assets/js/43.03ff128a.js" as="script"><link rel="preload" href="/assets/js/8.29467d76.js" as="script"><link rel="prefetch" href="/assets/js/10.70580d54.js"><link rel="prefetch" href="/assets/js/11.3f84195b.js"><link rel="prefetch" href="/assets/js/12.ffa2a844.js"><link rel="prefetch" href="/assets/js/13.4f3209c4.js"><link rel="prefetch" href="/assets/js/14.99cba7b1.js"><link rel="prefetch" href="/assets/js/15.c025855f.js"><link rel="prefetch" href="/assets/js/16.df90c8d2.js"><link rel="prefetch" href="/assets/js/17.8028663e.js"><link rel="prefetch" href="/assets/js/18.17aeb02a.js"><link rel="prefetch" href="/assets/js/19.4db10219.js"><link rel="prefetch" href="/assets/js/20.55ae3c5d.js"><link rel="prefetch" href="/assets/js/21.06383ecd.js"><link rel="prefetch" href="/assets/js/22.c1de6add.js"><link rel="prefetch" href="/assets/js/23.04557df6.js"><link rel="prefetch" href="/assets/js/24.098ad2f0.js"><link rel="prefetch" href="/assets/js/25.95c42c25.js"><link rel="prefetch" href="/assets/js/26.17ce7e9f.js"><link rel="prefetch" href="/assets/js/27.a5ca7973.js"><link rel="prefetch" href="/assets/js/28.298466ce.js"><link rel="prefetch" href="/assets/js/29.69f7008d.js"><link rel="prefetch" href="/assets/js/30.30567258.js"><link rel="prefetch" href="/assets/js/31.0135613f.js"><link rel="prefetch" href="/assets/js/32.5b316ba0.js"><link rel="prefetch" href="/assets/js/33.62183484.js"><link rel="prefetch" href="/assets/js/34.bfd8391e.js"><link rel="prefetch" href="/assets/js/35.d8f32cfa.js"><link rel="prefetch" href="/assets/js/36.3dbb4af1.js"><link rel="prefetch" href="/assets/js/37.2855592d.js"><link rel="prefetch" href="/assets/js/38.b8f80fce.js"><link rel="prefetch" href="/assets/js/39.63b530b9.js"><link rel="prefetch" href="/assets/js/40.ad0f9511.js"><link rel="prefetch" href="/assets/js/41.40bc8896.js"><link rel="prefetch" href="/assets/js/42.5292002c.js"><link rel="prefetch" href="/assets/js/44.185c94c8.js"><link rel="prefetch" href="/assets/js/45.8186b77e.js"><link rel="prefetch" href="/assets/js/5.c5d1e422.js"><link rel="prefetch" href="/assets/js/6.1987e49f.js"><link rel="prefetch" href="/assets/js/7.3713bc8d.js"><link rel="prefetch" href="/assets/js/9.6d834ffa.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.02b45572.js"><link rel="prefetch" href="/assets/js/vendors~notification.a9caabb0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.01d83501.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/metamask-fox.svg" alt="MetaMask Docs" class="logo"> <span class="site-name can-hide">MetaMask Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  Guide
+</a></div> <a href="https://github.com/MetaMask/metamask-docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  Guide
+</a></div> <a href="https://github.com/MetaMask/metamask-docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Guide</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/guide/getting-started.html" class="sidebar-link">Getting Started</a></li><li><a href="/guide/common-terms.html" class="sidebar-link">Common Terms</a></li><li><a href="/guide/initializing-dapps.html" class="sidebar-link">Initializing Dapps</a></li><li><a href="/guide/accessing-accounts.html" class="sidebar-link">Accessing Accounts</a></li><li><a href="/guide/sending-transactions.html" class="sidebar-link">Sending Transactions</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>API Reference</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/ethereum-provider.html" class="sidebar-link">Ethereum Provider API</a></li><li><a href="/guide/provider-migration.html" class="sidebar-link">Provider Migration Guide</a></li><li><a href="/guide/rpc-api.html" class="sidebar-link">RPC API</a></li><li><a href="/guide/signing-data.html" class="sidebar-link">Signing Data</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Best Practices</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/registering-function-names.html" class="sidebar-link">Registering Your Contract's Method Names</a></li><li><a href="/guide/registering-your-token.html" class="sidebar-link">Registering Tokens with Users</a></li><li><a href="/guide/defining-your-icon.html" class="sidebar-link">Defining Your App's Icon</a></li><li><a href="/guide/onboarding-library.html" class="sidebar-link">Onboarding Library</a></li><li><a href="/guide/metamask-extension-provider.html" class="sidebar-link">MetaMask Extension Provider</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Mobile</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/mobile-getting-started.html" class="sidebar-link">Introduction</a></li><li><a href="/guide/site-compatibility-checklist.html" class="sidebar-link">Site Compatibility Checklist</a></li><li><a href="/guide/mobile-best-practices.html" class="sidebar-link">Best Practices</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>MetaMask SDK</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/metamask-sdk-intro.html" class="sidebar-link">Welcome</a></li><li><a href="/guide/metamask-sdk-concepts.html" class="sidebar-link">Concepts</a></li><li><a href="/guide/metamask-sdk-js.html" class="sidebar-link">JavaScript</a></li><li><a href="/guide/metamask-sdk-mobile.html" class="sidebar-link">Mobile apps</a></li><li><a href="/guide/metamask-sdk-gaming.html" class="sidebar-link">Gaming</a></li><li><a href="/guide/metamask-sdk-known-issues-future-work.html" class="sidebar-link">Known Issues &amp; Future Work</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Snaps</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/snaps.html" class="sidebar-link">Introduction</a></li><li><a href="/guide/snaps-development-guide.html" class="sidebar-link">Development Guide</a></li><li><a href="/guide/snaps-rpc-api.html" aria-current="page" class="active sidebar-link">JSON-RPC API</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/snaps-rpc-api.html#table-of-contents" class="sidebar-link">Table of Contents</a></li><li class="sidebar-sub-header"><a href="/guide/snaps-rpc-api.html#unrestricted-methods" class="sidebar-link">Unrestricted Methods</a></li><li class="sidebar-sub-header"><a href="/guide/snaps-rpc-api.html#restricted-methods" class="sidebar-link">Restricted Methods</a></li></ul></li><li><a href="/guide/snaps-patching-dependencies.html" class="sidebar-link">Patching Dependencies</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Resources</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/create-dapp.html" class="sidebar-link">Create A Simple Dapp</a></li><li><a href="/guide/contributors.html" class="sidebar-link">Contributors</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="json-rpc-api"><a href="#json-rpc-api" class="header-anchor">#</a> JSON-RPC API</h1> <div class="custom-block tip"><p class="custom-block-title">Only Available in MetaMask Flask</p> <p>Snaps is only available in <a href="https://metamask.io/flask" target="_blank" rel="noopener noreferrer">MetaMask Flask<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p></div> <div class="custom-block tip"><p class="custom-block-title">Feature Requests</p> <p>Do you have feature requests? Other ideas? We'd love to hear about them! <a href="https://community.metamask.io/c/metamask-flask" target="_blank" rel="noopener noreferrer">Click here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> to join the discussion.</p></div> <h2 id="table-of-contents"><a href="#table-of-contents" class="header-anchor">#</a> Table of Contents</h2> <p></p><div class="table-of-contents"><ul><li><a href="#table-of-contents">Table of Contents</a></li><li><a href="#unrestricted-methods">Unrestricted Methods</a><ul><li><a href="#wallet-enable">wallet_enable</a></li><li><a href="#wallet-getsnaps">wallet_getSnaps</a></li><li><a href="#wallet-installsnaps">wallet_installSnaps</a></li><li><a href="#wallet-invokesnap">wallet_invokeSnap</a></li></ul></li><li><a href="#restricted-methods">Restricted Methods</a><ul><li><a href="#wallet-snap">wallet_snap_*</a></li><li><a href="#snap-confirm">snap_confirm</a></li><li><a href="#snap-getbip44entropy">snap_getBip44Entropy_*</a></li><li><a href="#snap-managestate">snap_manageState</a></li></ul></li></ul></div><p></p> <h2 id="unrestricted-methods"><a href="#unrestricted-methods" class="header-anchor">#</a> Unrestricted Methods</h2> <h3 id="wallet-enable"><a href="#wallet-enable" class="header-anchor">#</a> <code>wallet_enable</code></h3> <div class="custom-block warning"><p class="custom-block-title">Only Callable By</p> <ul><li>Websites</li></ul></div> <h4 id="parameters"><a href="#parameters" class="header-anchor">#</a> Parameters</h4> <ul><li><p><code>Array</code></p> <ol start="0"><li><code>RequestedPermissions</code> - The requested permissions.</li></ol></li></ul> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">WalletEnableParam</span> <span class="token punctuation">{</span>
+  wallet_snap<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>snapId<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      version<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">[</span>permissionName<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="returns"><a href="#returns" class="header-anchor">#</a> Returns</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">WalletEnableResult</span> <span class="token punctuation">{</span>
+  <span class="token comment">// The user's Ethereum accounts, if the eth_accounts permission has been</span>
+  <span class="token comment">// granted.</span>
+  accounts<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token comment">// The permissions granted to the requester.</span>
+  permissions<span class="token operator">:</span> Web3WalletPermission<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token comment">// The user's installed snaps that the requester is permitted to access.</span>
+  snaps<span class="token operator">:</span> WalletInstallSnapsResult<span class="token punctuation">;</span>
+  errors<span class="token operator">?</span><span class="token operator">:</span> Error<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Any errors encountered during processing.</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>WalletEnableResult</code> - An object containing the requester's permitted Ethereum accounts, snaps, and granted permissions.</p> <h4 id="description"><a href="#description" class="header-anchor">#</a> Description</h4> <p>This is a convenience method for requesting the user's accounts and connecting to / installing snaps.
+You can think of it as a combination of <a href="/guide/rpc-api.html#eth-requestaccounts"><code>eth_requestAccounts</code></a>, <a href="#wallet-installsnaps"><code>wallet_installSnaps</code></a>, and <a href="/guide/rpc-api.html#wallet-requestpermissions"><code>wallet_requestPermissions</code></a>.</p> <p>See the examples for details.</p> <h4 id="example"><a href="#example" class="header-anchor">#</a> Example</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> result<span class="token punctuation">;</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+  result <span class="token operator">=</span> <span class="token keyword">await</span> ethereum<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'wallet_enable'</span><span class="token punctuation">,</span>
+    <span class="token comment">// This entire object is ultimately just a list of requested permissions.</span>
+    <span class="token comment">// Every snap has an associated permission or permissions, given the prefix `wallet_snap_`</span>
+    <span class="token comment">// and its ID. Here, the `wallet_snap` property exists so that callers don't</span>
+    <span class="token comment">// have to specify the full permission permission name for each snap.</span>
+    <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token literal-property property">wallet_snap</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string-property property">'npm:@metamask/example-snap'</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token string-property property">'npm:fooSnap'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token comment">// The optional version argument allows requesting</span>
+            <span class="token comment">// SemVer version range, with semantics same as in</span>
+            <span class="token comment">// package.json ranges.</span>
+            <span class="token literal-property property">version</span><span class="token operator">:</span> <span class="token string">'^1.0.2'</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">eth_accounts</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// The `wallet_enable` call will throw if the requested permissions are</span>
+  <span class="token comment">// rejected.</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">4001</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'The user rejected the request.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Unexpected error:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// If the installation of all snaps fails, the associated error(s) will be</span>
+<span class="token comment">// returned in the `result.errors` array.</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>errors<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Snap installation failure :('</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span>errors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Success!'</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// Could print something of the form:</span>
+  <span class="token comment">// {</span>
+  <span class="token comment">//   accounts: ['0xa...', '0xb...'],</span>
+  <span class="token comment">//   permissions: {</span>
+  <span class="token comment">//     eth_accounts: {},</span>
+  <span class="token comment">//     'wallet_snap_npm:@metamask/example-snap': {},</span>
+  <span class="token comment">//   },</span>
+  <span class="token comment">//   snaps: {</span>
+  <span class="token comment">//     'npm:@metamask/example-snap': {</span>
+  <span class="token comment">//       version: '1.0.0',</span>
+  <span class="token comment">//       permissionName: 'wallet_snap_npm:@metamask/example-snap',</span>
+  <span class="token comment">//       ...</span>
+  <span class="token comment">//     },</span>
+  <span class="token comment">//     'npm:fooSnap': {</span>
+  <span class="token comment">//       error: { message: 'The snap does not exist.' },</span>
+  <span class="token comment">//     },</span>
+  <span class="token comment">//   }</span>
+  <span class="token comment">// }</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="wallet-getsnaps"><a href="#wallet-getsnaps" class="header-anchor">#</a> <code>wallet_getSnaps</code></h3> <div class="custom-block warning"><p class="custom-block-title">Only Callable By</p> <ul><li>Websites</li></ul></div> <h4 id="returns-2"><a href="#returns-2" class="header-anchor">#</a> Returns</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">WalletGetSnapsResult</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>snapId<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * The ID of the Snap.
+     */</span>
+    id<span class="token operator">:</span> SnapId<span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * The initial permissions of the Snap, which will be requested when it is
+     * installed.
+     */</span>
+    initialPermissions<span class="token operator">:</span> RequestedSnapPermissions<span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * The name of the permission used to invoke the Snap.
+     */</span>
+    permissionName<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * The version of the Snap.
+     */</span>
+    version<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>WalletGetSnapsResult</code> - An object containing the requester's permitted snaps.</p> <h4 id="description-2"><a href="#description-2" class="header-anchor">#</a> Description</h4> <p>This method returns the IDs of the caller's permitted snaps and some relevant metadata.</p> <h4 id="example-2"><a href="#example-2" class="header-anchor">#</a> Example</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> ethereum<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'wallet_getSnaps'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// If any snaps are permitted, will print e.g.:</span>
+<span class="token comment">// {</span>
+<span class="token comment">//   accountRPC methods?s: ['0xa...', '0xb...'],</span>
+<span class="token comment">//   permissions: {</span>
+<span class="token comment">//     eth_accounts: {},</span>
+<span class="token comment">//     'wallet_snap_npm:@metamask/example-snap': {},</span>
+<span class="token comment">//   },</span>
+<span class="token comment">//   snaps: {</span>
+<span class="token comment">//     'npm:@metamask/example-snap': {</span>
+<span class="token comment">//       version: '1.0.0',</span>
+<span class="token comment">//       permissionName: 'wallet_snap_npm:@metamask/example-snap',</span>
+<span class="token comment">//       ...</span>
+<span class="token comment">//     }</span>
+<span class="token comment">//   }</span>
+<span class="token comment">// }</span>
+</code></pre></div><h3 id="wallet-installsnaps"><a href="#wallet-installsnaps" class="header-anchor">#</a> <code>wallet_installSnaps</code></h3> <div class="custom-block warning"><p class="custom-block-title">Only Callable By</p> <ul><li>Websites</li></ul></div> <div class="custom-block warning"><p class="custom-block-title">Is this the method you're looking for?</p> <p>This method only installs the requested snaps if the caller is permitted to do so.
+You probably want to use <a href="#wallet-enable"><code>wallet_enable</code></a> instead, which both requests the permissions for the snaps <em>and</em> installs them.</p></div> <h4 id="parameters-2"><a href="#parameters-2" class="header-anchor">#</a> Parameters</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">InstallSnapsParam</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>snapId<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    version<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><p><code>Array</code></p> <ol start="0"><li><code>InstallSnapsParam</code> - The snaps to install.</li></ol></li></ul> <h4 id="returns-3"><a href="#returns-3" class="header-anchor">#</a> Returns</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">WalletInstallSnapsResult</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>snapId<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span>
+    <span class="token operator">|</span> WalletGetSnapsResult<span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span>
+    <span class="token operator">|</span> <span class="token punctuation">{</span>
+        error<span class="token operator">:</span> Error<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>WalletInstallSnapsResult</code> - An object mapping the IDs of installed snaps to their metadata or an error if installation failed.</p> <h4 id="description-3"><a href="#description-3" class="header-anchor">#</a> Description</h4> <p>This method attempts to install the requested snaps, if they are permitted.
+If the installation of any snap fails, its object value on the result will contain an <code>error</code> property with the error that caused the installation to fail.</p> <p>Optionally, you can specify a <a href="https://www.npmjs.com/package/semver" target="_blank" rel="noopener noreferrer">SemVer range<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> for any snap to be installed.
+If you do so, MetaMask will try to install a version of the snap that satisfies the requested range.
+If a compatible version of a snap is already installed, the request to install that snap will automatically succeed.
+If an incompatible version is installed, MetaMask will attempt to update the snap to the latest version that satisfies the requested range.
+The request will succeed if the snap is successfully updated, and fail if the update could not be completed.</p> <h4 id="example-3"><a href="#example-3" class="header-anchor">#</a> Example</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> ethereum<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'wallet_installSnaps'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string-property property">'npm:@metamask/example-snap'</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'npm:fooSnap'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// The optional version argument allows requesting a SemVer version</span>
+        <span class="token comment">// range, with the same semantics as npm package.json ranges.</span>
+        <span class="token literal-property property">version</span><span class="token operator">:</span> <span class="token string">'^1.0.2'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Could print something of the form:</span>
+<span class="token comment">// {</span>
+<span class="token comment">//   'npm:@metamask/example-snap': {</span>
+<span class="token comment">//     version: '1.0.0',</span>
+<span class="token comment">//     permissionName: 'wallet_snap_npm:@metamask/example-snap',</span>
+<span class="token comment">//     ...</span>
+<span class="token comment">//   },</span>
+<span class="token comment">//   'npm:fooSnap': {</span>
+<span class="token comment">//     error: { message: 'The snap does not exist.' },</span>
+<span class="token comment">//   },</span>
+<span class="token comment">// }</span>
+</code></pre></div><h3 id="wallet-invokesnap"><a href="#wallet-invokesnap" class="header-anchor">#</a> <code>wallet_invokeSnap</code></h3> <div class="custom-block warning"><p class="custom-block-title">Only Callable By</p> <ul><li>Websites</li></ul></div> <h4 id="parameters-3"><a href="#parameters-3" class="header-anchor">#</a> Parameters</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">/**
+ * This is a less stringent version of the JSON-RPC 2.0 request object
+ * interface. Keep in mind that snaps specify and implement their own JSON-RPC
+ * APIs, and may require the `id` and `jsonrpc` fields if they wish.
+ */</span>
+<span class="token keyword">interface</span> <span class="token class-name">SnapRequest</span> <span class="token punctuation">{</span>
+  method<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  params<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">unknown</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">|</span> Record<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">unknown</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+  id<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  jsonrpc<span class="token operator">?</span><span class="token operator">:</span> <span class="token string">'2.0'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><p><code>Array</code></p> <ol start="0"><li><code>string</code> - The id of the snap to invoke.</li> <li><code>SnapRequest</code> - The JSON-RPC request object to send to the invoked snap.</li></ol></li></ul> <h4 id="returns-4"><a href="#returns-4" class="header-anchor">#</a> Returns</h4> <p><code>unknown</code> - The result of the snap method call.</p> <h4 id="description-4"><a href="#description-4" class="header-anchor">#</a> Description</h4> <p>Invokes the specified JSON-RPC method of the specified snap.
+The snap must be installed and the caller must have the permission to communicate with the snap, or the request will be rejected.</p> <p>Snaps are fully responsible for implementing their JSON-RPC API; consult the snap's documentation for available methods, their parameters, and return values.</p> <h4 id="example-4"><a href="#example-4" class="header-anchor">#</a> Example</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> ethereum<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'wallet_invokeSnap'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">'npm:@metamask/example-snap'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'hello'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// We happen to know that this will be `true` or `false`</span>
+</code></pre></div><h2 id="restricted-methods"><a href="#restricted-methods" class="header-anchor">#</a> Restricted Methods</h2> <p>If a method is <em>restricted</em>, it means that you need the requisite permission before you can call it.
+Both snaps and dapps / websites can have permissions.
+Some permissions are only available to snaps, and some are only available to websites.
+See <a href="/guide/rpc-api.html#restricted-methods">here</a> for more information about the permission system.</p> <h3 id="wallet-snap"><a href="#wallet-snap" class="header-anchor">#</a> <code>wallet_snap_*</code></h3> <div class="custom-block warning"><p class="custom-block-title">Only Callable By</p> <ul><li>Websites</li></ul></div> <div class="custom-block warning"><p class="custom-block-title">Is this the method you're looking for?</p> <p><a href="#wallet-invokesnap"><code>wallet_invokeSnap</code></a> provides a more convenient way of calling this method.</p></div> <div class="custom-block tip"><p class="custom-block-title">Namespaced Method</p> <p>This is a namespaced restricted method.
+The <code>*</code> in the name will always be substituted for a string, in this case a snap ID.</p></div> <h4 id="parameters-4"><a href="#parameters-4" class="header-anchor">#</a> Parameters</h4> <ul><li><p><code>Array</code></p> <ol start="0"><li><code>SnapRequest</code> - The JSON-RPC request object to send to the invoked snap.</li></ol></li></ul> <h4 id="returns-5"><a href="#returns-5" class="header-anchor">#</a> Returns</h4> <p><code>unknown</code> - The result of the snap method call.</p> <h4 id="description-5"><a href="#description-5" class="header-anchor">#</a> Description</h4> <p>Invokes the specified JSON-RPC method of the snap corresponding to the specified permission name.
+The snap must be installed and the caller must have the permission to communicate with the snap, or the request will be rejected.</p> <p>Snaps are fully responsible for implementing their JSON-RPC API; consult the snap's documentation for available methods, their parameters, and return values.</p> <h4 id="example-5"><a href="#example-5" class="header-anchor">#</a> Example</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> ethereum<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'wallet_snap_npm:@metamask/example-snap'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'hello'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// We happen to know that this will be `true` or `false`</span>
+</code></pre></div><h3 id="snap-confirm"><a href="#snap-confirm" class="header-anchor">#</a> <code>snap_confirm</code></h3> <div class="custom-block warning"><p class="custom-block-title">Only Callable By</p> <ul><li>Snaps</li></ul></div> <h4 id="parameters-5"><a href="#parameters-5" class="header-anchor">#</a> Parameters</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">SnapConfirmParam</span> <span class="token punctuation">{</span>
+  <span class="token comment">/**
+   * A prompt, phrased as a question, no greater than 40 characters long.
+   */</span>
+  prompt<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token comment">/**
+   * A description, displayed with the prompt, no greater than 140 characters
+   * long.
+   */</span>
+  description<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token comment">/**
+   * Free-from text content, no greater than 1800 characters long.
+   * It will be displayed in monospace font in a scrollable text area.
+   */</span>
+  textAreaContent<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><p><code>Array</code></p> <ol start="0"><li><code>SnapConfirmParam</code> - An object containing the contents of the confirmation.</li></ol></li></ul> <h4 id="returns-6"><a href="#returns-6" class="header-anchor">#</a> Returns</h4> <p><code>boolean</code> - <code>true</code> if the user accepted the confirmation, and <code>false</code> otherwise.</p> <h4 id="description-6"><a href="#description-6" class="header-anchor">#</a> Description</h4> <p>Calling this method causes a confirmation to be displayed in the MetaMask UI.
+The contents of the confirmation depend on the parameters, see above for their meaning and format.
+The user can either approve or reject the confirmation, which will be indicated by the method's return value.</p> <h4 id="example-6"><a href="#example-6" class="header-anchor">#</a> Example</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> wallet<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'snap_confirm'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">prompt</span><span class="token operator">:</span> <span class="token string">'Would you like to take the action?'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">description</span><span class="token operator">:</span> <span class="token string">'The action is...'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">textAreaContent</span><span class="token operator">:</span> <span class="token string">'Very detailed information about the action...'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Take the action</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Do not take the action</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="snap-getbip44entropy"><a href="#snap-getbip44entropy" class="header-anchor">#</a> <code>snap_getBip44Entropy_*</code></h3> <div class="custom-block danger"><p class="custom-block-title">Powerful Method</p> <p>If you call this method, you will receive the user's parent key for the protocol that they requested.
+When that happens, you are now managing a person's keys, and whatever assets they control, on their behalf.
+Their safety is your responsibility.</p></div> <div class="custom-block warning"><p class="custom-block-title">Only Callable By</p> <ul><li>Snaps</li></ul></div> <div class="custom-block tip"><p class="custom-block-title">Namespaced Method</p> <p>This is a namespaced restricted method.
+The <code>*</code> in the name will always be substituted for a string, in this case a BIP-44 <code>coin_type</code> number.</p></div> <h4 id="returns-7"><a href="#returns-7" class="header-anchor">#</a> Returns</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">BIP44CoinTypeNode</span> <span class="token punctuation">{</span>
+  <span class="token comment">/**
+   * The BIP-44 `coin_type` value of this node.
+   */</span>
+  <span class="token keyword">readonly</span> coin_type<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  <span class="token comment">/**
+   * The 0-indexed BIP-44 path depth of this node.
+   *
+   * Since this is a `coin_type` node, it will be the number `2`.
+   */</span>
+  <span class="token keyword">readonly</span> depth<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token comment">/**
+   * The Base64-encoded string representation of the key material for this node.
+   */</span>
+  <span class="token keyword">readonly</span> key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token comment">/**
+   * A human-readable representation of the BIP-44 HD tree path of this node.
+   *
+   * Since this is a `coin_type` node, it will be of the form:
+   *
+   * `m / 44' / coin_type'`
+   *
+   * Recall that a complete BIP-44 HD tree path consists of the following nodes:
+   *
+   * `m / 44' / coin_type' / account' / change / address_index`
+   *
+   * With the following depths:
+   *
+   * `0 / 1 / 2 / 3 / 4 / 5`
+   */</span>
+  <span class="token keyword">readonly</span> path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>BIP44CoinTypeNode</code> - An object representing the <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki" target="_blank" rel="noopener noreferrer">BIP-44<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <code>coin_type</code> HD Tree node and containing its corresponding key material.</p> <h4 id="description-7"><a href="#description-7" class="header-anchor">#</a> Description</h4> <p>Gets the <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki" target="_blank" rel="noopener noreferrer">BIP-44<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <code>coin_type</code> key for the <code>coin_type</code> number specified by the method name.
+This is the &quot;key management&quot; permission of Snaps; use it with the utmost care.
+For the authoritative list of available protocols and their <code>coin_type</code> values, see <a href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md" target="_blank" rel="noopener noreferrer">SLIP-44<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <p>This restricted method is both implemented and designed to be used with <a href="https://npmjs.com/package/@metamask/key-tree" target="_blank" rel="noopener noreferrer"><code>@metamask/key-tree</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.
+See the <code>@metamask/key-tree</code> documentation and below example for more information.</p> <p>Note that <code>@metamask/key-tree</code> can help you get the <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#extended-keys" target="_blank" rel="noopener noreferrer">extended private keys<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> for user addresses, but it is your responsibility to know how to use those keys to e.g. derive an address for the relevant protocol or sign a transaction for the user.</p> <h4 id="example-7"><a href="#example-7" class="header-anchor">#</a> Example</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> getBIP44AddressKeyDeriver <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@metamask/key-tree'</span><span class="token punctuation">;</span>
+<span class="token comment">// By way of example, we will use Dogecoin, which has `coin_type` 3.</span>
+<span class="token keyword">const</span> dogecoinNode <span class="token operator">=</span> <span class="token keyword">await</span> wallet<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'snap_getBip44Entropy_3'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Next, we'll create an address key deriver function for the Dogecoin coin_type node.</span>
+<span class="token comment">// In this case, its path will be: m / 44' / 3' / 0' / 0 / address_index</span>
+<span class="token keyword">const</span> deriveDogecoinAddress <span class="token operator">=</span> <span class="token function">getBIP44AddressKeyDeriver</span><span class="token punctuation">(</span>dogecoinNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// These are Node.js Buffer representations of the extended private keys for</span>
+<span class="token comment">// the respective addresses.</span>
+<span class="token comment">// m / 44' / 3' / 0' / 0 / 0</span>
+<span class="token keyword">const</span> addressKey0 <span class="token operator">=</span> <span class="token function">deriveDogecoinAddress</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// m / 44' / 3' / 0' / 0 / 1</span>
+<span class="token keyword">const</span> addressKey1 <span class="token operator">=</span> <span class="token function">deriveDogecoinAddress</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Now, you can ask the user to e.g. sign transactions!</span>
+</code></pre></div><h3 id="snap-managestate"><a href="#snap-managestate" class="header-anchor">#</a> <code>snap_manageState</code></h3> <div class="custom-block danger"><p class="custom-block-title">Plaintext Data Storage</p> <p>The data stored by this method is persisted to disk in unencrypted / plaintext form.
+<strong>Never</strong> store any secrets using this method.</p></div> <div class="custom-block warning"><p class="custom-block-title">Only Callable By</p> <ul><li>Snaps</li></ul></div> <h4 id="parameters-6"><a href="#parameters-6" class="header-anchor">#</a> Parameters</h4> <ul><li><p><code>Array</code></p> <ol start="0"><li><code>'clear' | 'get' | 'update'</code> - The state operation to perform.</li> <li><code>Record&lt;string, unknown&gt; | void</code> - The value to update state with if the operation is <code>update</code>, and nothing otherwise.</li></ol></li></ul> <h4 id="returns-8"><a href="#returns-8" class="header-anchor">#</a> Returns</h4> <p><code>null | Record&lt;string, unknown&gt;</code> - The value stored in state of the operation is <code>get</code>, and <code>null</code> otherwise.</p> <h4 id="description-8"><a href="#description-8" class="header-anchor">#</a> Description</h4> <p>This method allows the snap to persist some data to disk in plaintext form and retrieve it at will.
+Since the data is in plaintext, the method should <strong>never</strong> be used to store secrets of any kind.</p> <h4 id="example-8"><a href="#example-8" class="header-anchor">#</a> Example</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// First, let's persist some data</span>
+<span class="token keyword">await</span> wallet<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'snap_manageState'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'update'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">hello</span><span class="token operator">:</span> <span class="token string">'world'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Then, at some later time, let's get the data we stored</span>
+<span class="token keyword">const</span> persistedData <span class="token operator">=</span> <span class="token keyword">await</span> wallet<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'snap_manageState'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'get'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>persistedData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// { hello: 'world' }</span>
+<span class="token comment">// Finally, if there's no need to store data anymore, we can clear it out</span>
+<span class="token keyword">await</span> wallet<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'snap_manageState'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'clear'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/MetaMask/metamask-docs/edit/master/docs/guide/snaps-rpc-api.md" target="_blank" rel="noopener noreferrer">Edit this page on GitHub</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/5/2022, 5:08:04 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/snaps-development-guide.html" class="prev">
+        Development Guide
+      </a></span> <span class="next"><a href="/guide/snaps-patching-dependencies.html">
+        Patching Dependencies
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.27ec8cea.js" defer></script><script src="/assets/js/4.335f270e.js" defer></script><script src="/assets/js/43.03ff128a.js" defer></script><script src="/assets/js/8.29467d76.js" defer></script>
+  </body>
+</html>
