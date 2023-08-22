@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
     <meta
       http-equiv="refresh"
       content="0;url=https://docs.metamask.io/wallet/how-to/connect/set-up-sdk/"
     />
-    <title>Redirecting...</title>
   </head>
   <body>
     <p>
@@ -16,8 +17,16 @@
       >.
     </p>
     <script type="text/javascript">
-      window.location.href =
-        "https://docs.metamask.io/wallet/how-to/connect/set-up-sdk/";
+      // Check if the current URL starts with 'http://example.com/documentation/'
+      if (
+        window.location.href.startsWith(
+          "https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/guide/"
+        )
+      ) {
+        // Redirect to the new URL
+        window.location.href =
+          "https://docs.metamask.io/wallet/how-to/connect/set-up-sdk/";
+      }
     </script>
   </body>
 </html>
