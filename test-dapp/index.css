@@ -2,6 +2,12 @@ section {
   margin: 20px 0 20px 0;
 }
 
+textarea {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
 .info-text {
   font-size: 1.1em;
 }
@@ -35,6 +41,36 @@ header {
 #mm-logo {
   width: 100%;
 }
+
+/* EIP6963 Section */
+
+.eip6963-providers {
+  max-height: 770px;
+  overflow: auto;
+}
+
+/* EIP6963 Warning Banner */
+
+.warning-message {
+  min-height: 32px;
+  border: 1px solid #a5bc22;
+  color: #24292e;
+  background: #fcf2f3;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 10px;
+  background-color: #dddd19;
+}
+.warning-message-icon {
+  margin-right: 8px;
+  flex: 0 0 auto;
+}
+.warning-message-text {
+  overflow: auto;
+}
+
 
 /* Encrypt/Decrypt */
 
